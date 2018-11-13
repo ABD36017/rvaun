@@ -1,0 +1,14 @@
+import speech_recognition as sr
+AUDIO FILE=("example,wav")
+#use the audio file as the audio source
+r=sr.recognizer()
+with sr.Audiofile(AUDIO_FILE)as source;
+#reads the audio file.here we use record instead of
+#listen
+audio = r.record(source)
+try:
+	print('the audio file contains:'+r.recognize_Google(audio))
+except sr.UnknownValueError:
+	print("Google speech recognition could not understand audio")
+except sr.requestError as e:
+	print("could not request results from Google speech recognition.service;{0}".forma)
